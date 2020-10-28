@@ -1,0 +1,41 @@
+{% extends 'home/base.html' %}
+
+{% block title %} ZAZ-notes {% endblock title %}
+
+
+{% block body %}
+<form method='post' action='/contact/'>
+    {% csrf_token %}
+    <div class="container">
+        <h1>ZAZ-notes Contact</h1>
+        <!--Name_section-->
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name_id" id="name">
+        </div>
+        <!--Email_section-->
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" name="email_id" id="email" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <!--Phone_number-->
+        <div class="form-group">
+            <label for="phone">Phone_number</label>
+            <input type="text" class="form-control" name="phone_id" id="conatct-number">
+            <small id="phone" class="form-text text-muted">Please write your number included country code.</small>
+        </div>
+        <!--Subject_section-->
+        <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" class="form-control" name="subject_issue" id="subject">
+        </div>
+        <!--Text_area-->
+        <div class="form-group">
+            <label for="problem">Describe your issue</label>
+            <textarea class="form-control" name='problem' id="problem" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock body %}
